@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SaaS is not dying. AI is raising the bar.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a18;
+      --ink-light: #4a4a46;
+      --rule: #d4cfc7;
+      --bg: #f7f4ef;
+      --accent: #b5470b;
+      --serif-display: 'Playfair Display', Georgia, serif;
+      --serif-body: 'Source Serif 4', Georgia, serif;
+    }
+    html { font-size: 18px; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--serif-body);
+      font-weight: 300;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      border-bottom: 2px solid var(--ink);
+      max-width: 720px;
+      margin: 0 auto 3rem;
+      padding: 2rem 1.5rem 1.25rem;
+    }
+    .kicker {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-family: var(--serif-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.6rem;
+    }
+    .deck {
+      font-family: var(--serif-display);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--ink-light);
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+    .byline {
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: var(--ink-light);
+      border-top: 1px solid var(--rule);
+      padding-top: 0.9rem;
+    }
+    article {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem 5rem;
+    }
+    p { margin-bottom: 1.4rem; font-size: 1rem; }
+    .lead::first-letter {
+      font-family: var(--serif-display);
+      font-size: 4.2rem;
+      font-weight: 700;
+      float: left;
+      line-height: 0.82;
+      margin-right: 0.08em;
+      margin-top: 0.08em;
+    }
+    h2 {
+      font-family: var(--serif-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 2.8rem 0 0.9rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+    }
+    blockquote {
+      border-left: 3px solid var(--accent);
+      margin: 2.2rem 0;
+      padding: 0.2rem 0 0.2rem 1.4rem;
+      font-family: var(--serif-display);
+      font-style: italic;
+      font-size: 1.2rem;
+      line-height: 1.55;
+      color: var(--ink-light);
+    }
+    .sidenote {
+      border-left: 2px solid var(--rule);
+      padding: 0.6rem 1rem;
+      margin: 1.8rem 0;
+      font-size: 0.88rem;
+      font-style: italic;
+      color: var(--ink-light);
+      line-height: 1.6;
+    }
+    .sidenote strong {
+      font-style: normal;
+      font-weight: 400;
+      color: var(--ink-light);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .closing-rule {
+      border: none;
+      border-top: 2px solid var(--ink);
+      margin: 3rem 0 0;
+      width: 4rem;
+    }
+    .site-header {
+      border-bottom: 2px solid #1a1a1a;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: baseline;
+    }
+    .site-header a {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+      color: #1a1a1a;
+    }
+    @media (max-width: 600px) { html { font-size: 16px; } }
+  </style>
+</head>
+<body>
+
+<div class="site-header">
+  <a href="../index.html">AI Next</a>
+</div>
+
+<header>
+  <p class="kicker">&nbsp;·&nbsp; Enterprise Software &nbsp;·&nbsp; </p>
+  <h1>SaaS is not dying. AI is raising the bar.</h1>
+  <p class="deck">AI agents can replicate the output. That doesn't make the vendor optional.</p>
+</header>
+
+<article>
+
+  <p class="lead">AI agents can now produce a functional Salesforce-like CRM in a matter of days-to-weeks. The code works. The core features are there. So why keep paying for the real thing?</p>
+
+  <p>It is a question plenty of CEOs are asking right now, and one that investors are clearly taking seriously — SaaS valuations have been under pressure as the implications sink in. The bear case writes itself: if AI can replicate the output, the software vendor becomes optional. But a closer look at what it would actually take to disintermediate SaaS reveals a more complicated picture.</p>
+
+  <h2>The accountability gap</h2>
+
+  <p>The first obstacle is not technical. It is human. When a business-critical system goes down — and they always do — someone needs to answer for it. SaaS vendors provide that accountability by default: support teams, SLAs, escalation paths, reputations on the line.</p>
+
+  <p>An AI-managed, internally-built stack offers none of that out of the box. You can hire someone to oversee it, of course. But to do this at scale, that person needs to be two things simultaneously: a deep expert in the business domain the software serves, and a technical expert capable of managing the underlying system. That combination is genuinely rare inside most enterprises (made worse if you've already laid off their team). AI agents can help, and perhaps one day an agent can be trained to fill the role adequately. But picture the board call after a major outage. "We have our IT person on it — they're prompting Claude as fast as they can" is not a sentence most executives want to deliver.</p>
+
+  <blockquote>"We have our IT person on it — they're prompting Claude as fast as they can"</blockquote>
+
+  <h2>The network you didn't build</h2>
+
+  <p>The second structural advantage of SaaS is less visible but equally hard to replicate: the cross-customer network. When you buy enterprise software, you are not just buying software. You are buying into a system that gets better every time any of its thousands of customers encounters a problem. A security vulnerability discovered at one company gets patched for all of them. A feature request from a large customer eventually benefits everyone on the platform. The collective intelligence of the user base is baked into the product.</p>
+
+  <p>Build everything in-house and you lose all of that. An AI agent could theoretically scrape the internet for signals about what others are doing, but the most valuable knowledge — what is actually working inside other organizations — is internal and will never be visible. The network effect of a shared platform cannot be reproduced by a team of one, however good the AI is.</p>
+
+  <div class="sidenote">
+    <strong>Sidenote</strong>
+    There's a venture idea buried here — a "knowledge marketplace" where companies pool anonymized learnings and share the benefits. Worth exploring another time.
+  </div>
+
+  <h2>The judgement step</h2>
+
+  <p>The third gap is perhaps the subtlest. Good SaaS companies do not just maintain software — they set a product vision. They make opinionated decisions about what matters, what to build next, and what the right answer looks like before customers have even articulated the question. This is what separates category-defining products from feature lists.</p>
+
+  <p>AI is not good at this yet. It can sound authoritative. It can synthesize options. But the judgement step — deciding what actually matters and why — still requires human expertise (at least for now).</p>
+
+  <h2>What this means in practice</h2>
+
+  <p>None of this is to say SaaS is unchanged. It clearly is, and there is no shortage of analysis charting exactly how much the industry is being reshaped. But the direction matters. This is not disintermediation — it is a raising of the bar.</p>
+
+  <p>For enterprises, the implication is about what to prioritize when evaluating software vendors. AI features are not it — these will arrive everywhere, evolve quickly, and be table stakes before you know it. The more durable questions are: does this vendor have a genuinely best-in-class team with deep domain expertise? Does it have a robust customer and partner network? Does it find novel ways to harness your data? Can it integrate and extend across your business?</p>
+
+  <p>AI makes it easier than ever to build something that looks good. The job of business leaders is to insist on something that actually is good.</p>
+
+  <p>For SaaS companies, the reckoning is sharper. The codebase is no longer the moat. The question every product leader should be asking is: what does our team and our data do that no one else can? Not the code — the team and the data. That is where the defensible value lives, and that is where investment should be concentrated. Pricing should follow value delivered, not seats or modules. Operationally, the companies that win will be those that adopt AI-native development practices themselves — using the same tools that threaten them to ship faster, deploy more flexibly, and make their products easier for agents and integrations to work with. Being AI agent-friendly is not a threat to manage; it is a distribution strategy.</p>
+
+  <h2>SaaS is going to look different</h2>
+
+  <p>Some of the largest players will struggle to adapt quickly enough and the structural pressures on the industry are real. The shift is less about whether SaaS survives and more about what it is worth paying for. The answer, increasingly, is everything except the code.</p>
+
+  <hr class="closing-rule" />
+
+</article>
+</body>
+</html>

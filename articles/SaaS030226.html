@@ -8,11 +8,11 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --ink: #1a1a18;
-      --ink-light: #4a4a46;
-      --rule: #d4cfc7;
-      --bg: #f7f4ef;
-      --accent: #b5470b;
+      --ink: #1b2d45;
+      --ink-light: #4a6070;
+      --rule: #ddd8cf;
+      --bg: #f9f7f5;
+      --accent: #c8102e;
       --serif-display: 'Playfair Display', Georgia, serif;
       --serif-body: 'Source Serif 4', Georgia, serif;
     }
@@ -31,13 +31,16 @@
       margin: 0 auto 3rem;
       padding: 2rem 1.5rem 1.25rem;
     }
-    .kicker {
+    .tags {
       font-size: 0.72rem;
       font-weight: 400;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 1rem;
+    }
+    .tag + .tag::before {
+      content: ' \00b7  ';
     }
     h1 {
       font-family: var(--serif-display);
@@ -121,18 +124,77 @@
       width: 4rem;
     }
     .site-header {
-      border-bottom: 2px solid #1a1a1a;
-      padding: 1.5rem 2rem;
+      border-top: 4px solid #c8102e;
+      border-bottom: 2px solid #1b2d45;
+      padding: 1.2rem 2rem;
       display: flex;
-      align-items: baseline;
+      align-items: center;
     }
     .site-header a {
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: 2rem;
+      font-size: 1.9rem;
       font-weight: 700;
-      letter-spacing: -0.5px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
       text-decoration: none;
-      color: #1a1a1a;
+      color: #1b2d45;
+    }
+    .subscribe-block {
+      border-top: 3px solid var(--accent);
+      margin-top: 3rem;
+      padding-top: 1.8rem;
+    }
+    .subscribe-block .subscribe-label {
+      font-family: system-ui, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7a8a9a;
+      margin-bottom: 0.4rem;
+    }
+    .subscribe-block .subscribe-tagline {
+      font-size: 1rem;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+    .subscribe-form {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .subscribe-form input[type="email"] {
+      flex: 1 1 220px;
+      padding: 0.6rem 0.9rem;
+      border: 1px solid #ddd8cf;
+      font-family: system-ui, sans-serif;
+      font-size: 0.9rem;
+      color: var(--ink);
+      background: #fff;
+      outline: none;
+    }
+    .subscribe-form input[type="email"]:focus {
+      border-color: var(--ink);
+    }
+    .subscribe-form button {
+      padding: 0.6rem 1.4rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      font-family: system-ui, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .subscribe-form button:hover { background: #a30d25; }
+    .subscribe-note {
+      font-family: system-ui, sans-serif;
+      font-size: 0.72rem;
+      color: #aaa;
+      margin-top: 0.6rem;
     }
     @media (max-width: 600px) { html { font-size: 16px; } }
   </style>
@@ -144,7 +206,10 @@
 </div>
 
 <header>
-  <p class="kicker">&nbsp;·&nbsp; Enterprise Software &nbsp;·&nbsp; </p>
+  <div class="tags">
+    <span class="tag">SaaS</span>
+    <span class="tag">AI</span>
+  </div>
   <h1>SaaS is not dying. AI is raising the bar.</h1>
   <p class="deck">AI agents can replicate the output. That doesn't make SaaS irrelevant.</p>
 </header>
@@ -195,6 +260,21 @@
   <p>Some of the largest players will struggle to adapt quickly enough and the structural pressures on the industry are real. The shift is less about whether SaaS survives and more about what it is worth paying for. The answer, increasingly, is everything except the code.</p>
 
   <hr class="closing-rule" />
+
+  <div class="subscribe-block">
+    <p class="subscribe-label">Subscribe for more</p>
+    <p class="subscribe-tagline">New articles every week(ish) on the most interesting AI topics.</p>
+    <form
+      action="https://buttondown.com/api/emails/embed-subscribe/pomerance-31"
+      method="post"
+      class="subscribe-form embeddable-buttondown-form"
+      referrerpolicy="unsafe-url"
+    >
+      <input type="email" name="email" id="bd-email" placeholder="your@email.com" required />
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="subscribe-note">No spam. Unsubscribe any time.</p>
+  </div>
 
 </article>
 </body>

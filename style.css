@@ -75,6 +75,10 @@ main {
   box-shadow: 0 4px 20px rgba(27, 45, 69, 0.1);
 }
 
+.tile-grid li a.tile-external {
+  border-top-color: #b0b8c1;
+}
+
 .tile-top {
   display: flex;
   justify-content: space-between;
@@ -131,6 +135,19 @@ main {
   padding: 0.2em 0.5em;
   border: 1px solid #c8102e;
   color: #c8102e;
+}
+
+.tag-external {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.tile-source {
+  font-family: system-ui, sans-serif;
+  font-size: 0.72rem;
+  color: #7a8a9a;
+  margin-top: 0.3rem;
+  margin-bottom: 0.4rem;
 }
 
 /* ── Article page ── */

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Three takeaways from Anthropic's Economic Index Report</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1b2d45;
+      --ink-light: #4a6070;
+      --rule: #ddd8cf;
+      --bg: #f9f7f5;
+      --accent: #c8102e;
+      --serif-display: 'Playfair Display', Georgia, serif;
+      --serif-body: 'Source Serif 4', Georgia, serif;
+    }
+    html { font-size: 18px; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--serif-body);
+      font-weight: 300;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    .site-header {
+      border-top: 4px solid #c8102e;
+      border-bottom: 2px solid #1b2d45;
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+    }
+    .site-header a {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #1b2d45;
+    }
+    header {
+      border-bottom: 2px solid var(--ink);
+      max-width: 720px;
+      margin: 0 auto 3rem;
+      padding: 2rem 1.5rem 1.25rem;
+    }
+    .tags {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .tag + .tag::before { content: ' \00b7  '; }
+    h1 {
+      font-family: var(--serif-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.6rem;
+    }
+    .deck {
+      font-family: var(--serif-display);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--ink-light);
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+    .byline {
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: var(--ink-light);
+      border-top: 1px solid var(--rule);
+      padding-top: 0.9rem;
+    }
+    article {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem 5rem;
+    }
+    p { margin-bottom: 1.4rem; font-size: 1rem; }
+    .lead::first-letter {
+      font-family: var(--serif-display);
+      font-size: 4.2rem;
+      font-weight: 700;
+      float: left;
+      line-height: 0.82;
+      margin-right: 0.08em;
+      margin-top: 0.08em;
+    }
+    h2 {
+      font-family: var(--serif-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 2.8rem 0 0.9rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+    }
+    blockquote {
+      border-left: 3px solid var(--accent);
+      margin: 2.2rem 0;
+      padding: 0.2rem 0 0.2rem 1.4rem;
+      font-family: var(--serif-display);
+      font-style: italic;
+      font-size: 1.2rem;
+      line-height: 1.55;
+      color: var(--ink-light);
+    }
+    .sidenote {
+      border-left: 2px solid var(--rule);
+      padding: 0.6rem 1rem;
+      margin: 1.8rem 0;
+      font-size: 0.88rem;
+      font-style: italic;
+      color: var(--ink-light);
+      line-height: 1.6;
+    }
+    .sidenote strong {
+      font-style: normal;
+      font-weight: 400;
+      color: var(--ink-light);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    figure {
+      margin: 2.4rem 0;
+    }
+    figure img {
+      width: 100%;
+      display: block;
+      border: 1px solid var(--rule);
+    }
+    figcaption {
+      font-size: 0.8rem;
+      color: var(--ink-light);
+      font-style: italic;
+      margin-top: 0.6rem;
+      line-height: 1.5;
+    }
+    figcaption .source {
+      display: block;
+      margin-top: 0.2rem;
+      font-style: normal;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #9aabb8;
+    }
+    .closing-rule {
+      border: none;
+      border-top: 2px solid var(--ink);
+      margin: 3rem 0 0;
+      width: 4rem;
+    }
+    .subscribe-block {
+      border-top: 3px solid var(--accent);
+      margin-top: 3rem;
+      padding-top: 1.8rem;
+    }
+    .subscribe-block .subscribe-label {
+      font-family: system-ui, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7a8a9a;
+      margin-bottom: 0.4rem;
+    }
+    .subscribe-block .subscribe-tagline {
+      font-size: 1rem;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+    .subscribe-form {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .subscribe-form input[type="email"] {
+      flex: 1 1 220px;
+      padding: 0.6rem 0.9rem;
+      border: 1px solid #ddd8cf;
+      font-family: system-ui, sans-serif;
+      font-size: 0.9rem;
+      color: var(--ink);
+      background: #fff;
+      outline: none;
+    }
+    .subscribe-form input[type="email"]:focus { border-color: var(--ink); }
+    .subscribe-form button {
+      padding: 0.6rem 1.4rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      font-family: system-ui, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .subscribe-form button:hover { background: #a30d25; }
+    .subscribe-note {
+      font-family: system-ui, sans-serif;
+      font-size: 0.72rem;
+      color: #aaa;
+      margin-top: 0.6rem;
+    }
+    @media (max-width: 600px) { html { font-size: 16px; } }
+  </style>
+</head>
+<body>
+
+<div class="site-header">
+  <a href="../index.html">AI Next</a>
+</div>
+
+<header>
+  <div class="tags">
+    <span class="tag">Enterprise AI</span>
+    <span class="tag">Research</span>
+  </div>
+  <h1>Three takeaways from Anthropic's Economic Index Report</h1>
+  <p class="deck">Real-world implementation data on how and where enterprises are using AI — and what it means in practice.</p>
+</header>
+
+<article>
+
+  <p class="lead">Yesterday, Anthropic published their Economic Index Report — a descriptive overview of how Claude is being used by geography, education level, occupation, and more. In our view, the most interesting data for the enterprise sits in the usage trends by occupation group and the difference between Claude.ai and API channel usage. There we can see real-world implementation data on how and where enterprises are deploying AI. Three takeaways:</p>
+
+  <h2>1. Back-office tasks are showing strong automation momentum</h2>
+
+  <p>API usage in office and administrative support (a rough proxy for automation) increased approximately 25% over three months from August to November 2025. It is one of only two occupation groups where API usage exceeds Claude.ai usage, the other being coding, which remains the most common use of Claude overall.</p>
+
+  <figure>
+    <img src="https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fb67d78d056f86d9d4a46002d60fd5efe79e59372-4762x2439.png&w=3840&q=75" alt="Claude.ai and API usage over time by occupation group" />
+    <figcaption>
+      Each panel shows the share of sampled conversations on Claude.ai and 1P API records associated with tasks from each Standard Occupation Classification (SOC) major group.
+      <span class="source">Source: Anthropic</span>
+    </figcaption>
+  </figure>
+
+  <h2>2. Performance is not there yet for the highest productivity-increasing tasks</h2>
+
+  <p>Potential speedup (i.e. productivity gain) increases with "human years of schooling," a proxy for task complexity, meaning the upside is greater for more complex tasks (obviously). Critically though, success rates decline at the same time as speedup increases, reaching only around 55% for highly complex tasks in the API channel. Even for simpler tasks, success rates sit at roughly 65%.</p>
+
+  <figure>
+    <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/748b522964169a031f15579194d8c8976ba80a79-1920x792.svg" alt="Speedup and success rate vs. human years of schooling" />
+    <figcaption>
+      Speedup (panel a) and success rate (panel b) vs. human years of schooling. Binned scatterplots of the bivariate relationship measured at the O*NET task level, split by platform. Dashed lines show linear regression fits.
+      <span class="source">Source: Anthropic</span>
+    </figcaption>
+  </figure>
+
+  <p>What this means: a significant portion, if not all, of the productivity gains in more complex tasks could be erased by the need for human review of Claude's output. The potential for speedup is there, but the accuracy is not. If you can't trust the output, does the speed-up matter?</p>
+
+  <blockquote>If you can't trust the output, does the speed-up matter?</blockquote>
+
+  <h2>3. Humans-in-the-loop remain critical</h2>
+
+  <p>As "human duration", another proxy for complexity, increases, task success decreases. That is not surprising; we saw this above. What IS interesting is the discrepancy between Claude.ai and their API. Claude.ai, with its conversational breaks and periodic human input, performs materially better (read: performs less worse) than the API channel as complexity grows. Humans-in-the-loop remain critical with given current AI capabilities.</p>
+
+  <figure>
+    <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/e86ca40632399589ebdd5520e8702761dcfeb792-1920x1400.svg" alt="Task success vs. human-only time, by platform" />
+    <figcaption>
+      Task success (%) vs. the time a task would require a human to complete alone, measured at the O*NET task level and split by platform. Dashed lines show linear regression fits.
+      <span class="source">Source: Anthropic</span>
+    </figcaption>
+  </figure>
+
+  <p>While these results are not groundbreaking, nor particularly surprising, they do offer concrete substantiating data: for the highest impact today, enterprises need to maintain humans in the loop and take a pragmatic approach to prioritizing where AI is deployed and how employees use it.</p>
+
+  <hr class="closing-rule" />
+
+  <div class="subscribe-block">
+    <p class="subscribe-label">Subscribe for more</p>
+    <p class="subscribe-tagline">New articles every week(ish) on the most interesting AI topics.</p>
+    <form
+      action="https://buttondown.com/api/emails/embed-subscribe/pomerance-31"
+      method="post"
+      class="subscribe-form embeddable-buttondown-form"
+      referrerpolicy="unsafe-url"
+    >
+      <input type="email" name="email" id="bd-email" placeholder="your@email.com" required />
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="subscribe-note">No spam. Unsubscribe any time.</p>
+  </div>
+
+</article>
+</body>
+</html>

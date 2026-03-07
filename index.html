@@ -8,10 +8,7 @@
 </head>
 <body>
 
-  <header>
-    <h1>AI Next</h1>
-    <nav><a href="about.html">ABOUT</a></nav>
-  </header>
+  <div id="site-header"></div>
 
   <main>
 
@@ -19,12 +16,14 @@
          To add a new article:
            1. Drop your .html file into articles/
            2. Copy one <li> block below and update href, date, title, blurb
+         When a new original article is added, move the "featured" class to that newest <li>
     ─────────────────────────────────────────────────────────── -->
 
     <ul class="tile-grid">
 
-      <li>
+      <li class="featured">
         <a href="articles/SaaS030226.html">
+          <span class="latest-flag">🚩 Latest</span>
           <div class="tile-top">
             <div class="meta">March 2, 2026</div>
             <div class="tags">
@@ -38,17 +37,19 @@
         </a>
       </li>
 
+      <li class="grid-divider" aria-hidden="true"></li>
+
       <li>
         <a class="tile-external" href="https://newsletter.semianalysis.com/p/claude-code-is-the-inflection-point" target="_blank" rel="noopener">
           <div class="tile-top">
             <div class="meta">Feb 5, 2026</div>
             <div class="tags">
-              <span class="tag tag-external">External</span>
+              <span class="tag tag-external">↗ External</span>
             </div>
           </div>
+          <div class="tile-source">SemiAnalysis</div>
           <h2>Claude Code is the Inflection Point</h2>
           <p>What It Is, How We Use It, Industry Repercussions, Microsoft's Dilemma, Why Anthropic Is Winning</p>
-          <div class="tile-source">SemiAnalysis</div>
           <span class="read-more">Read article &rarr;</span>
         </a>
       </li>
@@ -58,12 +59,12 @@
           <div class="tile-top">
             <div class="meta">Jan 22, 2026</div>
             <div class="tags">
-              <span class="tag tag-external">External</span>
+              <span class="tag tag-external">↗ External</span>
             </div>
           </div>
+          <div class="tile-source">a16z &middot; David George</div>
           <h2>State of Markets</h2>
           <p>What we're seeing in the private and public markets, what the state of AI looks like, and why today's winners are just built different.</p>
-          <div class="tile-source">a16z &middot; David George</div>
           <span class="read-more">Read article &rarr;</span>
         </a>
       </li>
@@ -87,9 +88,8 @@
 
   </main>
 
-  <footer>
-    &copy; 2026 AI Next
-  </footer>
+  <div id="site-footer"></div>
+  <script src="components.js"></script>
 
 </body>
 </html>

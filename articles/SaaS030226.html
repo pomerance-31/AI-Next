@@ -123,22 +123,6 @@
       margin: 3rem 0 0;
       width: 4rem;
     }
-    .site-header {
-      border-top: 4px solid #c8102e;
-      border-bottom: 2px solid #1b2d45;
-      padding: 1.2rem 2rem;
-      display: flex;
-      align-items: center;
-    }
-    .site-header a {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 1.9rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: #1b2d45;
-    }
     .subscribe-block {
       border-top: 3px solid var(--accent);
       margin-top: 3rem;
@@ -201,9 +185,7 @@
 </head>
 <body>
 
-<div class="site-header">
-  <a href="../index.html">AI Next</a>
-</div>
+<div id="site-header"></div>
 
 <header>
   <div class="tags">
@@ -278,5 +260,8 @@
   </div>
 
 </article>
+
+<div id="site-footer"></div>
+<script src="../components.js"></script>
 </body>
 </html>

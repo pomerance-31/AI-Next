@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The case for high token costs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1b2d45;
+      --ink-light: #4a6070;
+      --rule: #ddd8cf;
+      --bg: #f9f7f5;
+      --accent: #c8102e;
+      --serif-display: 'Playfair Display', Georgia, serif;
+      --serif-body: 'Source Serif 4', Georgia, serif;
+    }
+    html { font-size: 18px; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--serif-body);
+      font-weight: 300;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    .site-header {
+      border-top: 4px solid #c8102e;
+      border-bottom: 2px solid #1b2d45;
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+    }
+    .site-header a {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #1b2d45;
+    }
+    header {
+      border-bottom: 2px solid var(--ink);
+      max-width: 720px;
+      margin: 0 auto 3rem;
+      padding: 2rem 1.5rem 1.25rem;
+    }
+    .tags {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .tag + .tag::before { content: ' \00b7  '; }
+    h1 {
+      font-family: var(--serif-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.6rem;
+    }
+    .deck {
+      font-family: var(--serif-display);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--ink-light);
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+    .byline {
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: var(--ink-light);
+      border-top: 1px solid var(--rule);
+      padding-top: 0.9rem;
+    }
+    article {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem 5rem;
+    }
+    p { margin-bottom: 1.4rem; font-size: 1rem; }
+    .lead::first-letter {
+      font-family: var(--serif-display);
+      font-size: 4.2rem;
+      font-weight: 700;
+      float: left;
+      line-height: 0.82;
+      margin-right: 0.08em;
+      margin-top: 0.08em;
+    }
+    h2 {
+      font-family: var(--serif-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 2.8rem 0 0.9rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+    }
+    blockquote {
+      border-left: 3px solid var(--accent);
+      margin: 2.2rem 0;
+      padding: 0.2rem 0 0.2rem 1.4rem;
+      font-family: var(--serif-display);
+      font-style: italic;
+      font-size: 1.2rem;
+      line-height: 1.55;
+      color: var(--ink-light);
+    }
+    .sidenote {
+      border-left: 2px solid var(--rule);
+      padding: 0.6rem 1rem;
+      margin: 1.8rem 0;
+      font-size: 0.88rem;
+      font-style: italic;
+      color: var(--ink-light);
+      line-height: 1.6;
+    }
+    .sidenote strong {
+      font-style: normal;
+      font-weight: 400;
+      color: var(--ink-light);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--accent); }
+    .closing-rule {
+      border: none;
+      border-top: 2px solid var(--ink);
+      margin: 3rem 0 0;
+      width: 4rem;
+    }
+    .subscribe-block {
+      border-top: 3px solid var(--accent);
+      margin-top: 3rem;
+      padding-top: 1.8rem;
+    }
+    .subscribe-block .subscribe-label {
+      font-family: system-ui, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7a8a9a;
+      margin-bottom: 0.4rem;
+    }
+    .subscribe-block .subscribe-tagline {
+      font-size: 1rem;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+    .subscribe-form { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .subscribe-form input[type="email"] {
+      flex: 1 1 220px;
+      padding: 0.6rem 0.9rem;
+      border: 1px solid #ddd8cf;
+      font-family: system-ui, sans-serif;
+      font-size: 0.9rem;
+      color: var(--ink);
+      background: #fff;
+      outline: none;
+    }
+    .subscribe-form input[type="email"]:focus { border-color: var(--ink); }
+    .subscribe-form button {
+      padding: 0.6rem 1.4rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      font-family: system-ui, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .subscribe-form button:hover { background: #a30d25; }
+    .subscribe-note {
+      font-family: system-ui, sans-serif;
+      font-size: 0.72rem;
+      color: #aaa;
+      margin-top: 0.6rem;
+    }
+    @media (max-width: 600px) { html { font-size: 16px; } }
+  </style>
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<header>
+  <div class="tags">
+    <span class="tag">Enterprise AI</span>
+    <span class="tag">Strategy</span>
+  </div>
+  <h1>The case for high token costs</h1>
+  <p class="deck">Token costs may eventually fall, but winning organizations will use high costs to their benefit.</p>
+  <p class="byline">March 8, 2026</p>
+</header>
+
+<article>
+
+  <p class="lead">We've been in a lot of executive conversations recently where long-term token costs come up as a genuine concern: to become truly AI-native, you will need a dramatic increase in AI usage across your organization, and at that scale, token economics start to matter materially.</p>
+
+  <p>This concern is legitimate, but it's worth putting in context where we are today. Most organizations are far from this reality. <a href="https://www.mckinsey.com/cn/our-insights/our-insights/beyond-the-hype-unlocking-value-from-the-ai-revolution" target="_blank" rel="noopener">McKinsey finds 80% of companies are deploying AI — and 80% are not realizing meaningful value from it.</a> The real blockers are not tokens but data foundations, operating models, change management, and governance and risk guardrails.</p>
+
+  <p>While consistently high token costs may limit scale long-term, they can actually help near-term. Higher costs force discipline (learning how and where to deploy AI efficiently) and can help prepare an organization for scale by avoiding an AI slop doom-loop that becomes very hard to escape.</p>
+
+  <h2>A compute analogy</h2>
+
+  <p>A professor in my PhD program had a favourite provocation: Moore's Law was one of the most important economic forces of our time, but really only because engineers are lazy. Given abundant compute, they stopped optimizing. Output went up — not because they were smarter or more precise, but because they could brute-force the same problems with more raw power.</p>
+
+  <p>His point (especially apt in a university environment) was that scarcity produces innovation, precision, and excellent execution. When compute is limited, teams think carefully about which problems are worth solving, which approaches justify the cost, and — most importantly — how to do it well. Yes, that means you have to optimize your algorithm.</p>
+
+  <p>Token economics work the same way, and the dynamic can be even more pervasive in the enterprise as AI enables more and more knowledge work. Token costs do need to come down for AI to scale, but high costs also force discipline. And high costs might be here to stay: as <a href="https://www.economist.com/business/2025/11/23/ai-tokens-are-surging-but-are-profits" target="_blank" rel="noopener">the Economist recently noted</a>, "cheaper tokens have not made AI cheap" — because models keep improving and growing more verbose, meaning more tokens are required to complete a task even as the per-token price falls.</p>
+
+  <h2>The slop problem scales with abundance</h2>
+
+  <p>Lower token costs to near zero and the volume of AI-generated content in an organization explodes. Most of it will look credible, and only a small fraction will be good. Organizations already struggling to absorb AI-driven change face an even harder version of that problem: the issue won't be finding enough AI output, but separating signal from slop. High token costs impose the right questions — how do we structurally determine good from bad, where do we prioritize resources, what does success look like — before the volume gets out of hand.</p>
+
+  <h2>Build the muscle now</h2>
+
+  <p>The organizations that will win are those building, right now, the judgment infrastructure: validation processes, human oversight, governance frameworks that distinguish useful AI output from plausible-sounding noise. When costs fall, they will deploy AI with discrimination. The executives complaining today about token costs will be the same ones spraying tokens everywhere tomorrow and wondering why the value still isn't materializing.</p>
+
+  <hr class="closing-rule" />
+
+  <div class="subscribe-block">
+    <p class="subscribe-label">Subscribe for more</p>
+    <p class="subscribe-tagline">New articles every week(ish) on the most interesting AI topics.</p>
+    <form
+      action="https://buttondown.com/api/emails/embed-subscribe/pomerance-31"
+      method="post"
+      class="subscribe-form embeddable-buttondown-form"
+      referrerpolicy="unsafe-url"
+    >
+      <input type="email" name="email" id="bd-email" placeholder="your@email.com" required />
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="subscribe-note">No spam. Unsubscribe any time.</p>
+  </div>
+
+</article>
+
+<div id="site-footer"></div>
+<script src="../components.js"></script>
+</body>
+</html>

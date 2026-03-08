@@ -12,18 +12,37 @@
 
   <main>
 
-    <!-- ── Tile grid ─────────────────────────────────────────────
-         To add a new article:
-           1. Drop your .html file into articles/
-           2. Copy one <li> block below and update href, date, title, blurb
+    <!-- ── Featured ───────────────────────────────────────────────
          When a new original article is added, move the "featured" class to that newest <li>
     ─────────────────────────────────────────────────────────── -->
 
     <ul class="tile-grid">
-
       <li class="featured">
+        <a href="articles/TokenCosts030826.html">
+          <span class="latest-flag">🚩 Featured</span>
+          <div class="tile-top">
+            <div class="meta">March 8, 2026</div>
+            <div class="tags">
+              <span class="tag">Enterprise AI</span>
+              <span class="tag">Strategy</span>
+            </div>
+          </div>
+          <h2>The case for high token costs</h2>
+          <p>Everyone wants cheaper tokens. But for organizations right now, high token costs can be do more good than harm.</p>
+          <span class="read-more">Read article &rarr;</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- ── Our Articles ────────────────────────────────────────────
+         To add a new article: drop .html into articles/, copy an <li> below
+    ─────────────────────────────────────────────────────────── -->
+
+    <h2 class="section-label">Our Articles</h2>
+    <ul class="tile-grid">
+
+      <li>
         <a href="articles/SaaS030226.html">
-          <span class="latest-flag">🚩 Latest</span>
           <div class="tile-top">
             <div class="meta">March 2, 2026</div>
             <div class="tags">
@@ -37,7 +56,44 @@
         </a>
       </li>
 
-      <li class="grid-divider" aria-hidden="true"></li>
+      <li>
+        <a href="articles/Anthropic_Usage_Report_011626.html">
+          <div class="tile-top">
+            <div class="meta">Jan 16, 2026</div>
+            <div class="tags">
+              <span class="tag">Enterprise AI</span>
+              <span class="tag">Research</span>
+            </div>
+          </div>
+          <h2>Three takeaways from Anthropic's Economic Index Report</h2>
+          <p>Real-world implementation data on how and where enterprises are using AI — and what it means in practice.</p>
+          <span class="read-more">Read article &rarr;</span>
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- ── Reading List ────────────────────────────────────────────
+         External articles worth reading
+    ─────────────────────────────────────────────────────────── -->
+
+    <h2 class="section-label">Reading List</h2>
+    <ul class="tile-grid">
+
+      <li>
+        <a class="tile-external" href="https://sequoiacap.com/article/services-the-new-software/" target="_blank" rel="noopener">
+          <div class="tile-top">
+            <div class="meta">Mar 5, 2026</div>
+            <div class="tags">
+              <span class="tag tag-external">↗ External</span>
+            </div>
+          </div>
+          <div class="tile-source">Sequoia</div>
+          <h2>Services: The New Software</h2>
+          <p>The next $1T company will be a software company masquerading as a services firm.</p>
+          <span class="read-more">Read article &rarr;</span>
+        </a>
+      </li>
 
       <li>
         <a class="tile-external" href="https://newsletter.semianalysis.com/p/claude-code-is-the-inflection-point" target="_blank" rel="noopener">
@@ -70,16 +126,16 @@
       </li>
 
       <li>
-        <a href="articles/Anthropic_Usage_Report_011626.html">
+        <a class="tile-external" href="https://epoch.ai/blog/can-ai-scaling-continue-through-2030" target="_blank" rel="noopener">
           <div class="tile-top">
-            <div class="meta">Jan 16, 2026</div>
+            <div class="meta">Aug 20, 2024</div>
             <div class="tags">
-              <span class="tag">Enterprise AI</span>
-              <span class="tag">Research</span>
+              <span class="tag tag-external">↗ External</span>
             </div>
           </div>
-          <h2>Three takeaways from Anthropic's Economic Index Report</h2>
-          <p>Real-world implementation data on how and where enterprises are using AI — and what it means in practice.</p>
+          <div class="tile-source">Epoch AI</div>
+          <h2>Can AI Scaling Continue Through 2030?</h2>
+          <p>An examination of the four key constraints — power, chips, data, and latency — that will determine whether the current pace of AI training expansion can hold through the decade.</p>
           <span class="read-more">Read article &rarr;</span>
         </a>
       </li>

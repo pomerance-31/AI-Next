@@ -199,18 +199,8 @@ article pre code {
 }
 
 /* ── About page ── */
-.about-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-@media (max-width: 700px) {
-  .about-layout {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
+.about-content {
+  max-width: 640px;
 }
 
 .about-heading {
@@ -227,42 +217,43 @@ article pre code {
   margin-bottom: 1.1rem;
 }
 
-.about-right {
-  border-top: 3px solid #c8102e;
-  padding-top: 1rem;
-}
-.about-right .subscribe-label {
-  font-size: 1rem;
-  letter-spacing: 0.08em;
-}
-.about-right .subscribe-form input[type="email"] {
-  font-size: 1.2rem;
-  padding: 0.75rem 1rem;
-}
-.about-right .subscribe-form button {
-  font-size: 1rem;
-  padding: 0.75rem 1.6rem;
-}
-.about-right .subscribe-note {
-  font-size: 0.9rem;
+.about-ctas {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
 }
 
-.about-section {
-  max-width: 580px;
-}
-
-.about-tagline {
-  font-size: 1.6rem;
-  line-height: 1.35;
-  font-weight: 700;
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.4rem;
+  border: 1.5px solid #1b2d45;
+  background: none;
+  font-family: system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
   color: #1b2d45;
-  margin-bottom: 0.6rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
-.about-sub {
+.cta-btn:hover {
+  background: #1b2d45;
+  color: #fff;
+}
+
+.cta-icon {
   font-size: 1rem;
-  color: #4a6070;
-  margin-bottom: 2.5rem;
+}
+
+.about-subscribe {
+  border-top: 1px solid #ddd8cf;
+  margin-top: 3rem;
+  padding-top: 2rem;
 }
 
 .subscribe-block {
@@ -351,6 +342,7 @@ article pre code {
   color: #c8102e;
   margin-bottom: 0.7rem;
 }
+
 
 /* ── Section labels ── */
 .section-label {

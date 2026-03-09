@@ -176,7 +176,7 @@
             <label>Full Name <input type="text" name="name" required /></label>
             <label>Your Email <input type="email" name="email" required /></label>
             <label>Subject<input type="text" name="topic" required /></label>
-            <label>Brief Description <textarea name="description" rows="4" required></textarea></label>
+            <label>Message <textarea name="description" rows="4" required></textarea></label>
             <button type="submit" class="modal-submit">Submit</button>
           </form>
         </div>

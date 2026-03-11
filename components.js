@@ -1,5 +1,12 @@
 (function () {
 
+  // ── GoatCounter analytics ─────────────────────────────────────
+  const gc = document.createElement('script');
+  gc.dataset.goatcounter = 'https://ai-next.goatcounter.com/count';
+  gc.async = true;
+  gc.src = '//gc.zgo.at/count.js';
+  document.head.appendChild(gc);
+
   // ── Injected styles (header + footer + modals) ────────────────
   const style = document.createElement('style');
   style.textContent = `

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mistral Forge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1b2d45;
+      --ink-light: #4a6070;
+      --rule: #ddd8cf;
+      --bg: #f9f7f5;
+      --accent: #c8102e;
+      --serif-display: 'Playfair Display', Georgia, serif;
+      --serif-body: 'Source Serif 4', Georgia, serif;
+    }
+    html { font-size: 18px; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--serif-body);
+      font-weight: 300;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    .site-header {
+      border-top: 4px solid #c8102e;
+      border-bottom: 2px solid #1b2d45;
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+    }
+    .site-header a {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #1b2d45;
+    }
+    header {
+      border-bottom: 2px solid var(--ink);
+      max-width: 720px;
+      margin: 0 auto 3rem;
+      padding: 2rem 1.5rem 1.25rem;
+    }
+    .tags {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .tag + .tag::before { content: ' \00b7  '; }
+    h1 {
+      font-family: var(--serif-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.6rem;
+    }
+    .deck {
+      font-family: var(--serif-display);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--ink-light);
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+    .byline {
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: var(--ink-light);
+      border-top: 1px solid var(--rule);
+      padding-top: 0.9rem;
+    }
+    article {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem 5rem;
+    }
+    p { margin-bottom: 1.4rem; font-size: 1rem; }
+    .lead::first-letter {
+      font-family: var(--serif-display);
+      font-size: 4.2rem;
+      font-weight: 700;
+      float: left;
+      line-height: 0.82;
+      margin-right: 0.08em;
+      margin-top: 0.08em;
+    }
+    h2 {
+      font-family: var(--serif-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 2.8rem 0 0.9rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+    }
+    ul.questions {
+      margin: 0 0 1.4rem 0;
+      padding-left: 1.4rem;
+      list-style: disc;
+    }
+    ul.questions li {
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 0.6rem;
+      color: var(--ink);
+    }
+    figure { margin: 2.4rem 0; }
+    figure img { width: 100%; display: block; border: 1px solid var(--rule); }
+    figcaption {
+      font-size: 0.8rem;
+      color: var(--ink-light);
+      font-style: italic;
+      margin-top: 0.6rem;
+      line-height: 1.5;
+    }
+    figcaption .source {
+      display: block;
+      margin-top: 0.2rem;
+      font-style: normal;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #9aabb8;
+    }
+    .external-link {
+      display: inline-block;
+      margin-top: 0.4rem;
+      font-family: var(--serif-body);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 0.05em;
+    }
+    .external-link:hover { opacity: 0.75; }
+    .closing-rule {
+      border: none;
+      border-top: 2px solid var(--ink);
+      margin: 3rem 0 0;
+      width: 4rem;
+    }
+    .subscribe-block {
+      border-top: 3px solid var(--accent);
+      margin-top: 3rem;
+      padding-top: 1.8rem;
+    }
+    .subscribe-block .subscribe-label {
+      font-family: system-ui, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7a8a9a;
+      margin-bottom: 0.4rem;
+    }
+    .subscribe-block .subscribe-tagline {
+      font-size: 1rem;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+    .subscribe-form { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .subscribe-form input[type="email"] {
+      flex: 1 1 220px;
+      padding: 0.6rem 0.9rem;
+      border: 1px solid #ddd8cf;
+      font-family: system-ui, sans-serif;
+      font-size: 0.9rem;
+      color: var(--ink);
+      background: #fff;
+      outline: none;
+    }
+    .subscribe-form input[type="email"]:focus { border-color: var(--ink); }
+    .subscribe-form button {
+      padding: 0.6rem 1.4rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      font-family: system-ui, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .subscribe-form button:hover { background: #a30d25; }
+    .subscribe-note {
+      font-family: system-ui, sans-serif;
+      font-size: 0.72rem;
+      color: #aaa;
+      margin-top: 0.6rem;
+    }
+    @media (max-width: 600px) { html { font-size: 16px; } }
+  </style>
+</head>
+<body>
+
+<div class="site-header">
+  <a href="../index.html">AI Next</a>
+</div>
+
+<header>
+  <div class="tags">
+    <span class="tag">Quick Update</span>
+    <span class="tag">Enterprise AI</span>
+  </div>
+  <h1>Mistral Forge</h1>
+  <p class="deck">Enterprises can now train frontier-grade models on their own proprietary data.</p>
+  <p class="byline">March 18, 2026</p>
+</header>
+
+<article>
+
+  <p class="lead">Three years ago, Bloomberg spent an estimated $10 million training BloombergGPT, a 50-billion-parameter model purpose-built for finance. The industry was still figuring out whether enterprises should be building their own models or deferring to frontier providers. It was early, it was expensive, and it was a landmark. Most enterprises drew the obvious conclusion: custom model training is not for us.</p>
+
+  <p>The conventional wisdom that followed was sensible. Start with a frontier model, layer on fine-tuning and RAG, and you will cover most enterprise use cases. Agents added a new layer of capability, but still ran on the same underlying frontier models. This approach has served enterprises well enough — but many have considered what new capabilities could be unlocked by training on the knowledge truly unique to each organization, the proprietary data, and the institutional nuance. We may soon find out at scale.</p>
+
+  <p>Mistral this week launched Forge. Enterprises can now train frontier-grade models directly on their proprietary data: internal documentation, codebases, compliance frameworks, operational records, engineering standards. The training isn't just fine-tuning — pre-training, post-training, and reinforcement learning pipelines are all on offer, allowing organizations to encode institutional intelligence into the model itself rather than bolt it on at inference time. Early partners include ASML, Ericsson, and the European Space Agency.</p>
+
+  <figure>
+    <img src="https://cms.mistral.ai/assets/138e36ef-d015-4889-a7dd-cb78371d4b09.png?width=4996&height=1340" alt="Mistral Forge training pipeline overview" />
+    <figcaption>
+      The Mistral Forge training pipeline, from raw enterprise data through pre-training, post-training, and reinforcement learning to a deployed custom model.
+      <span class="source">Source: Mistral</span>
+    </figcaption>
+  </figure>
+
+  <p>Some questions worth sitting with:</p>
+
+  <ul class="questions">
+    <li>Will enterprises actually be able to train these models well enough to deliver real value — or will data quality, labeling, and evaluation challenges prove harder than the infrastructure?</li>
+    <li>Can custom models become a genuine source of competitive advantage by unlocking the institutional knowledge that is the real differentiator, or will most organizations find they don't have the data discipline to make it work?</li>
+    <li>Will concerns about training data ownership and risk finally be overcome, opening the floodgates to bespoke models at scale?</li>
+    <li>As enterprises become model builders, when do non-traditional providers start offering their proprietary models externally?</li>
+    <li>What will differentiate a model training pipeline when every major lab offers one?</li>
+  </ul>
+
+  <p><a class="external-link" href="https://mistral.ai/news/forge?utm_source=tldrai" target="_blank" rel="noopener">→ Read the full Mistral Forge announcement</a></p>
+
+  <hr class="closing-rule" />
+
+  <div class="subscribe-block">
+    <p class="subscribe-label">Subscribe for more</p>
+    <p class="subscribe-tagline">New articles every week(ish) on the most interesting AI topics.</p>
+    <form
+      action="https://buttondown.com/api/emails/embed-subscribe/pomerance-31"
+      method="post"
+      class="subscribe-form embeddable-buttondown-form"
+      referrerpolicy="unsafe-url"
+    >
+      <input type="email" name="email" id="bd-email" placeholder="your@email.com" required />
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="subscribe-note">No spam. Unsubscribe any time.</p>
+  </div>
+
+</article>
+</body>
+</html>
